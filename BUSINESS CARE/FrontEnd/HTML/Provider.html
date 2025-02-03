@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Care - Fournisseurs</title>
+    <link rel="stylesheet" href="../CSS/Styles.css">
+    <link rel="icon" href="../IMAGES/Logo2.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../IMAGES/Logo2.png" alt="Business Care Logo" style="width:150px; height: auto;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="client.html">Client</a></li>
+                <li><a href="employee.html">Employé</a></li>
+                <li><a href="provider.html" class="active">Fournisseur</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="provider-section">
+            <h1>Espace Fournisseurs</h1>
+            <p>Bienvenue dans votre espace dédié. Gérez vos interventions, vos disponibilités et vos factures.</p>
+
+            <div class="provider-actions">
+                <a href="#interventions" class="action-button">Mes Interventions</a>
+                <a href="#disponibilites" class="action-button">Gérer mes Disponibilités</a>
+                <a href="#factures" class="action-button">Consulter mes Factures</a>
+            </div>
+        </section>
+
+        <section id="interventions" class="provider-interventions">
+            <h2>Mes Interventions</h2>
+            <div class="intervention-list">
+                <div class="intervention-item">
+                    <h3>Yoga Session</h3>
+                    <p><strong>Date :</strong> 01/02/2025</p>
+                    <p><strong>Client :</strong> TechCorp</p>
+                    <p><strong>Statut :</strong> Terminé</p>
+                    <a href="#" class="intervention-link">Détails</a>
+                </div>
+                <div class="intervention-item">
+                    <h3>Coaching Leadership</h3>
+                    <p><strong>Date :</strong> 10/03/2025</p>
+                    <p><strong>Client :</strong> HealthPlus</p>
+                    <p><strong>Statut :</strong> En cours</p>
+                    <a href="#" class="intervention-link">Détails</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="disponibilites" class="provider-availability">
+            <h2>Mes Disponibilités</h2>
+            <div class="availability-calendar">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Heure</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>05/02/2025</td>
+                            <td>09:00 - 12:00</td>
+                            <td>Disponible</td>
+                        </tr>
+                        <tr>
+                            <td>12/03/2025</td>
+                            <td>14:00 - 17:00</td>
+                            <td>Occupé</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="factures" class="provider-invoices">
+            <h2>Mes Factures</h2>
+            <div class="invoice-list">
+                <div class="invoice-item">
+                    <h3>Facture YogaMaster</h3>
+                    <p><strong>Date :</strong> 01/02/2025</p>
+                    <p><strong>Montant :</strong> 100 €</p>
+                    <a href="#" class="invoice-link">Télécharger</a>
+                </div>
+                <div class="invoice-item">
+                    <h3>Facture CoachX</h3>
+                    <p><strong>Date :</strong> 10/03/2025</p>
+                    <p><strong>Montant :</strong> 200 €</p>
+                    <a href="#" class="invoice-link">Télécharger</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Business Care. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

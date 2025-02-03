@@ -1,0 +1,33 @@
+
+LES TACHES POUR A REALISER POUR LES TROIS MISSONS
+MISSION 1:GESTION DE LA SOCIETE
+1-Conception de l'application web
+2-Création des espaces utilisateurs
+3-Multilinguisme
+4-API et services cloud
+5-Serveur web
+MISSION 2:SERVICES SUPPLEMENTAIRES
+1-Application autonome Java
+2-Application Android
+3-Carte NFC
+MISSION 3:INFRSTRUCTURE SYSTEME?RESEAU ET SECURITE
+1-Configuration des sites
+2-Reseau BCN
+3-Securité et sauvegarde
+4-Virtualisation
+5-Documentation
+
+Note sur le PROJET ANNULE
+Pour réaliser la mission 1 on dois suivre cela:
+Créer une application web avec plusieurs espaces:
+-Espace pour les sociétés clientes(gestion des contrats, factures,collaborateurs)
+-Espace pour les salairiés(réservation de services,gestion du planning,chatbot)
+-Espace pour les prestataires(gestion des interventions,calendrier,facturation)
+-Back-office d'administration générale(gestion complète de l'activité de     Business Care).
+Fonctionnalités clés :
+   Gestion des contrats et des paiements (via Stripe).
+   Génération automatique de factures en PDF.
+   Notifications push pour les salariés.
+   Site multilingue (sans utiliser Google Translate).
+   Utilisation d'une API pour gérer les traitements.
+   Serveur web personnel pour héberger le site.

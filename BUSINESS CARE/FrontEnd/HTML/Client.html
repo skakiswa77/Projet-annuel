@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Care - Clients</title>
+    <link rel="stylesheet" href="../CSS/Styles.css">
+    <link rel="icon" href="../IMAGES/Logo2.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../IMAGES/Logo2.png" alt="Business Care Logo" style="width:150px; height: auto;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="client.html" class="active">Client</a></li>
+                <li><a href="employee.html">Employé</a></li>
+                <li><a href="provider.html">Fournisseur</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="client-section">
+            <h1>Espace Clients</h1>
+            <p>Bienvenue dans votre espace dédié. Gérez vos contrats, consultez vos factures et bien plus encore.</p>
+
+            <div class="client-actions">
+                <a href="#contrats" class="action-button">Voir mes contrats</a>
+                <a href="#factures" class="action-button">Consulter mes factures</a>
+                <a href="#contact" class="action-button">Contacter le support</a>
+            </div>
+        </section>
+
+        <section id="contrats" class="client-contracts">
+            <h2>Mes Contrats</h2>
+            <div class="contract-list">
+                <div class="contract-item">
+                    <h3>Contrat TechCorp</h3>
+                    <p><strong>Durée :</strong> 01/01/2025 - 31/12/2025</p>
+                    <p><strong>Statut :</strong> Payé</p>
+                    <a href="#" class="contract-link">Détails</a>
+                </div>
+                <div class="contract-item">
+                    <h3>Contrat HealthPlus</h3>
+                    <p><strong>Durée :</strong> 01/01/2025 - 30/06/2025</p>
+                    <p><strong>Statut :</strong> En attente</p>
+                    <a href="#" class="contract-link">Détails</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="factures" class="client-invoices">
+            <h2>Mes Factures</h2>
+            <div class="invoice-list">
+                <div class="invoice-item">
+                    <h3>Facture TechCorp</h3>
+                    <p>Montant : 5000 €</p>
+                    <a href="#" class="invoice-link">Télécharger</a>
+                </div>
+                <div class="invoice-item">
+                    <h3>Facture HealthPlus</h3>
+                    <p>Montant : 2500 €</p>
+                    <a href="#" class="invoice-link">Télécharger</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="client-contact">
+            <h2>Contactez le support</h2>
+            <form action="#" method="post">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="submit-button">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Business Care. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

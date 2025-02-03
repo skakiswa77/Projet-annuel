@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Care - Employés</title>
+    <link rel="stylesheet" href="../CSS/Styles.css">
+    <link rel="icon" href="../IMAGES/Logo2.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../IMAGES/Logo2.png" alt="Business Care Logo" style="width:150px; height: auto;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="client.html">Client</a></li>
+                <li><a href="employee.html" class="active">Employé</a></li>
+                <li><a href="provider.html">Fournisseur</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="employee-section">
+            <h1>Espace Employés</h1>
+            <p>Bienvenue dans votre espace dédié. Consultez vos tâches, votre emploi du temps et bien plus encore.</p>
+
+            <div class="employee-actions">
+                <a href="#taches" class="action-button">Voir mes tâches</a>
+                <a href="#emploi-du-temps" class="action-button">Consulter mon emploi du temps</a>
+                <a href="#documents" class="action-button">Accéder aux documents</a>
+            </div>
+        </section>
+
+        <section id="taches" class="employee-tasks">
+            <h2>Mes Tâches</h2>
+            <div class="task-list">
+                <div class="task-item">
+                    <h3>Préparer le rapport d'activités</h3>
+                    <p>Analyser les sessions de yoga et coaching du mois.</p>
+                    <p>Statut : A FAIRE</p>
+                    <a href="#" class="task-link">Détails</a>
+                </div>
+                <div class="task-item">
+                    <h3>Organiser un événement bien-être</h3>
+                    <p>Planifier une session de team building avec les prestataires.</p>
+                    <p>Statut : EN COURS</p>
+                    <a href="#" class="task-link">Détails</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="emploi-du-temps" class="employee-schedule">
+            <h2>Mon Emploi du Temps</h2>
+            <div class="schedule">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Lundi</th>
+                            <th>Mardi</th>
+                            <th>Mercredi</th>
+                            <th>Jeudi</th>
+                            <th>Vendredi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:00 - 10:00</td>
+                            <td>Yoga Session</td>
+                            <td>Formation interne</td>
+                            <td>Coaching individuel</td>
+                            <td>Planification d'événements</td>
+                            <td>Réunion clients</td>
+                        </tr>
+                        <tr>
+                            <td>10:00 - 12:00</td>
+                            <td>Gestion des contrats</td>
+                            <td>Session bien-être</td>
+                            <td>Formation interne</td>
+                            <td>Gestion RH</td>
+                            <td>Clôture des dossiers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="documents" class="employee-documents">
+            <h2>Documents</h2>
+            <div class="document-list">
+                <div class="document-item">
+                    <h3>Guide des employés</h3>
+                    <p>Consignes et procédures internes.</p>
+                    <a href="#" class="document-link">Télécharger</a>
+                </div>
+                <div class="document-item">
+                    <h3>Rapport mensuel</h3>
+                    <p>Analyse des prestations et activités.</p>
+                    <a href="#" class="document-link">Télécharger</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Business Care. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
