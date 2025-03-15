@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription</title>
+    <style>
+        body {
+            background-color: #d2d7e0; /* Fond bleu pour toute la page */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            color: white; /* Texte en blanc pour contraster avec le fond bleu */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Couvrir toute la hauteur de la page */
+        }
+
+        /* Bouton Retour */
+        .back-button {
+            position: absolute; /* Position absolue pour placer le bouton en haut à gauche */
+            top: 20px;
+            left: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Supprimer le soulignement du lien */
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .logo-section img {
+            width: 90px; /* Taille du logo */
+            margin-bottom: 20px; /* Espacement sous le logo */
+        }
+
+        h1 {
+            margin: 0; /* Supprimer les marges par défaut */
+            font-size: 24px; /* Taille de police */
+        }
+
+        .form-container {
+            max-width: 990px;
+            width: 100%;
+            background-color:  #00CFFF;
+            padding: 20px;
+            border-radius: 35px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centrer le texte dans le formulaire */
+            color: black; /* Texte en noir pour le formulaire */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: center; /* Centrer les labels et les champs */
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 120px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: white;
+            color: black;
+            margin: 0 auto; /* Centrer les champs */
+            display: block;
+        }
+
+        .inline-group {
+            display: flex;
+            justify-content: center; /* Centrer les champs "Nom" et "Prénom" */
+            gap: 10px; /* Espacement entre les champs */
+        }
+
+        .inline-group .form-group {
+            flex: 1;
+            max-width: 250px; /* Limiter la largeur des champs */
+        }
+
+        .date-inputs {
+            display: flex;
+            justify-content: center; /* Centrer les champs de date */
+            gap: 10px;
+        }
+
+        .date-inputs input,
+        .date-inputs select {
+            width: 80px; /* Largeur des champs de date */
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centrer les cases à cocher */
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+
+        .checkbox-group input {
+            margin-left: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            max-width: 200px; /* Largeur maximale du bouton */
+            margin: 0 auto; /* Centrer le bouton horizontalement */
+            display: block; /* Permettre l'utilisation de margin: 0 auto */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton Retour -->
+    <a href="index.html" class="back-button">Retour</a>
+
+    <!-- Logo -->
+    <div class="logo-section">
+        <img src="../IMAGES/Logo2.png" alt="Logo">
+    </div>
+
+    <!-- Titre -->
+    <h1>BIENVENUE À L'INSCRIPTION</h1>
+
+    <!-- Formulaire -->
+    <div class="form-container">
+        <!-- Nom et Prénom -->
+        <div class="inline-group">
+            <div class="form-group">
+                <label for="nom">NOM</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">PRÉNOM</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+        </div>
+
+        <!-- Date de Naissance -->
+        <div class="form-group">
+            <label>Date de Naissance</label>
+            <div class="date-inputs">
+                <input type="number" name="jour" placeholder="Jour" min="1" max="31" required>
+                <select name="mois" required>
+                    <option value="" disabled selected>Mois</option>
+                    <option value="1">Janvier</option>
+                    <option value="2">Février</option>
+                    <option value="3">Mars</option>
+                    <option value="4">Avril</option>
+                    <option value="5">Mai</option>
+                    <option value="6">Juin</option>
+                    <option value="7">Juillet</option>
+                    <option value="8">Août</option>
+                    <option value="9">Septembre</option>
+                    <option value="10">Octobre</option>
+                    <option value="11">Novembre</option>
+                    <option value="12">Décembre</option>
+                </select>
+                <input type="number" name="annee" placeholder="Année" min="1980" max="2025" required>
+            </div>
+        </div>
+
+        <!-- Genre -->
+        <div class="form-group">
+            <label>Genre</label>
+            <div class="checkbox-group">
+                <label>Homme <input type="radio" name="genre" value="homme" required></label>
+                <label>Femme <input type="radio" name="genre" value="femme" required></label>
+                <label>Autre <input type="radio" name="genre" value="autre" required></label>
+            </div>
+        </div>
+
+        <!-- Lieu de Naissance -->
+        <div class="form-group">
+            <label for="lieu">Lieu de Naissance</label>
+            <input type="text" id="lieu" name="lieu" required>
+        </div>
+
+        <!-- Adresse Permanente -->
+        <div class="form-group">
+            <label for="adresse">Adresse Permanente</label>
+            <input type="text" id="adresse" name="adresse" required>
+        </div>
+
+        <!-- Code Postal et Ville -->
+        <div class="inline-group">
+            <div class="form-group">
+                <label for="code_postal">Code Postal</label>
+                <input type="text" id="code_postal" name="code_postal" required>
+            </div>
+            <div class="form-group">
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville" required>
+            </div>
+        </div>
+
+        <!-- Téléphone -->
+        <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Niveau d'étude -->
+        <div class="form-group">
+            <label>Niveau d'étude</label>
+            <div class="checkbox-group">
+                <label>BAC <input type="checkbox" name="niveau" value="BAC"></label>
+                <label>LICENCE <input type="checkbox" name="niveau" value="LICENCE"></label>
+                <label>MASTER <input type="checkbox" name="niveau" value="MASTER"></label>
+                <label>Doctorat <input type="checkbox" name="niveau" value="Doctorat"></label>
+                <label>Autre <input type="checkbox" name="niveau" value="Autre"></label>
+            </div>
+        </div>
+
+        <!-- Commentaires -->
+        <div class="form-group">
+            <label for="commentaires">Commentaires ou Informations supplémentaires</label>
+            <textarea id="commentaires" name="commentaires" rows="4" required></textarea>
+        </div>
+
+        <!-- Bouton d'envoi -->
+        <button type="submit">ENVOYER</button>
+    </div>
+</body>
+</html>

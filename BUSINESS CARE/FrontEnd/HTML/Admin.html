@@ -4,106 +4,471 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Care - Admin</title>
-    <link rel="stylesheet" href="../CSS/Styles.css">
-    <link rel="icon" href="../IMAGES/Logo2.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0 60px 0 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f1eded;
+            background-position: center center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            width: 100px;
+            height: auto;
+        }
+
+        .language-selector select {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .notification-icon {
+            background-color: #4b9ce2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .notification-icon:hover {
+            background-color: #3a7bb5;
+        }
+
+        .Contenaire {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Contenaire ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: rgba(240, 236, 236, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .Contenaire ul li a {
+            color: rgb(25, 25, 26);
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .Contenaire ul li a:hover, .Contenaire ul li a.active {
+            color: #767777;
+        }
+
+        main {
+            padding: 40px 20px;
+        }
+
+        .admin-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin: 120px auto 20px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-section img {
+            width:50%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .admin-section h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .admin-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .admin-societes, .admin-salaries, .admin-fournisseurs, .admin-evenements {
+            padding: 30px 20px;
+            background-color: white;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-societes h2, .admin-salaries h2, .admin-fournisseurs h2, .admin-evenements h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .societe-list, .salarie-list, .fournisseur-list, .evenement-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .societe-item, .salarie-item, .fournisseur-item, .evenement-item {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .societe-item:hover, .salarie-item:hover, .fournisseur-item:hover, .evenement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .societe-item h3, .salarie-item h3, .fournisseur-item h3, .evenement-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .societe-item p, .salarie-item p, .fournisseur-item p, .evenement-item p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .societe-link, .salarie-link, .fournisseur-link, .evenement-link {
+            background-color: #64a0d4;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .societe-link:hover, .salarie-link:hover, .fournisseur-link:hover, .evenement-link:hover {
+            background-color: #5997d4;
+        }
+
+        footer {
+            text-align: center;
+            background-color: rgba(87, 92, 97, 0.8);
+            color: white;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="../IMAGES/Logo2.png" alt="Business Care Logo" style="width:150px; height: auto;">
+        <div class="logo-section">
+            <img src="../IMAGES/Logo2.png" alt="Business Care Logo">
+            <div class="language-selector">
+                <select id="language">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
         </div>
-        <nav>
+        <button class="notification-icon">
+            <i class="fas fa-bell"></i>
+        </button>
+        <div class="Contenaire">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="client.html">Client</a></li>
-                <li><a href="employee.html">Employé</a></li>
-                <li><a href="provider.html">Fournisseur</a></li>
-                <li><a href="admin.html" class="active">Admin</a></li>
+                <li><a href="index.html" data-lang="home">Accueil</a></li>
+                <li><a href="client.html" data-lang="client">Client</a></li>
+                <li><a href="employee.html" data-lang="employee">Employé</a></li>
+                <li><a href="provider.html" data-lang="provider">Fournisseur</a></li>
+                <li><a href="admin.html" class="active" data-lang="admin">Admin</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <main>
         <section class="admin-section">
-            <h1>Espace Administrateur</h1>
-            <p>Bienvenue dans l'espace de gestion de Business Care. Gérez les sociétés clientes, les salariés, les fournisseurs et les événements.</p>
+            <img src="../IMAGES/admin1.jpg" alt="Business care accueil">
+            <h1 data-lang="adminSpaceTitle">Espace Administrateur</h1>
+            <p data-lang="adminSpaceDescription">Bienvenue dans l'espace de gestion de Business Care. Gérez les sociétés clientes, les salariés, les fournisseurs et les événements.</p>
         </section>
 
         <section id="gestion-societes" class="admin-societes">
-            <h2>Gestion des Sociétés Client</h2>
+            <h2 data-lang="manageCompanies">Gestion des Sociétés Client</h2>
             <div class="societe-list">
                 <div class="societe-item">
-                    <h3>TechCorp</h3>
-                    <p><strong>Contact :</strong> contact@techcorp.com</p>
-                    <p><strong>Contrat :</strong> Premium - Actif</p>
-                    <a href="#" class="societe-link">Détails</a>
+                    <h3 data-lang="company1">TechCorp</h3>
+                    <p><strong data-lang="contact">Contact :</strong> contact@techcorp.com</p>
+                    <p><strong data-lang="contract">Contrat :</strong> <span data-lang="premiumActive">Premium - Actif</span></p>
+                    <a href="#" class="societe-link" data-lang="details">Détails</a>
                 </div>
                 <div class="societe-item">
-                    <h3>HealthPlus</h3>
-                    <p><strong>Contact :</strong> info@healthplus.com</p>
-                    <p><strong>Contrat :</strong> Basic - En attente</p>
-                    <a href="#" class="societe-link">Détails</a>
+                    <h3 data-lang="company2">HealthPlus</h3>
+                    <p><strong data-lang="contact">Contact :</strong> info@healthplus.com</p>
+                    <p><strong data-lang="contract">Contrat :</strong> <span data-lang="basicPending">Basic - En attente</span></p>
+                    <a href="#" class="societe-link" data-lang="details">Détails</a>
                 </div>
             </div>
         </section>
 
         <section id="gestion-salaries" class="admin-salaries">
-            <h2>Gestion des Salariés</h2>
+            <h2 data-lang="manageEmployees">Gestion des Salariés</h2>
             <div class="salarie-list">
                 <div class="salarie-item">
-                    <h3>John Doe</h3>
-                    <p><strong>Société :</strong> TechCorp</p>
-                    <p><strong>Statut :</strong> Actif</p>
-                    <a href="#" class="salarie-link">Détails</a>
+                    <h3 data-lang="employee1">John Doe</h3>
+                    <p><strong data-lang="company">Société :</strong> TechCorp</p>
+                    <p><strong data-lang="status">Statut :</strong> <span data-lang="active">Actif</span></p>
+                    <a href="#" class="salarie-link" data-lang="details">Détails</a>
                 </div>
                 <div class="salarie-item">
-                    <h3>Jane Smith</h3>
-                    <p><strong>Société :</strong> HealthPlus</p>
-                    <p><strong>Statut :</strong> Actif</p>
-                    <a href="#" class="salarie-link">Détails</a>
+                    <h3 data-lang="employee2">Jane Smith</h3>
+                    <p><strong data-lang="company">Société :</strong> HealthPlus</p>
+                    <p><strong data-lang="status">Statut :</strong> <span data-lang="active">Actif</span></p>
+                    <a href="#" class="salarie-link" data-lang="details">Détails</a>
                 </div>
             </div>
         </section>
 
         <section id="gestion-fournisseurs" class="admin-fournisseurs">
-            <h2>Gestion des Fournisseurs</h2>
+            <h2 data-lang="manageProviders">Gestion des Fournisseurs</h2>
             <div class="fournisseur-list">
                 <div class="fournisseur-item">
-                    <h3>YogaMaster</h3>
-                    <p><strong>Services :</strong> Yoga</p>
-                    <p><strong>Tarif :</strong> 50€/h</p>
-                    <a href="#" class="fournisseur-link">Détails</a>
+                    <h3 data-lang="provider1">YogaMaster</h3>
+                    <p><strong data-lang="services">Services :</strong> <span data-lang="yoga">Yoga</span></p>
+                    <p><strong data-lang="rate">Tarif :</strong> 50€/h</p>
+                    <a href="#" class="fournisseur-link" data-lang="details">Détails</a>
                 </div>
                 <div class="fournisseur-item">
-                    <h3>CoachX</h3>
-                    <p><strong>Services :</strong> Coaching</p>
-                    <p><strong>Tarif :</strong> 75€/h</p>
-                    <a href="#" class="fournisseur-link">Détails</a>
+                    <h3 data-lang="provider2">CoachX</h3>
+                    <p><strong data-lang="services">Services :</strong> <span data-lang="coaching">Coaching</span></p>
+                    <p><strong data-lang="rate">Tarif :</strong> 75€/h</p>
+                    <a href="#" class="fournisseur-link" data-lang="details">Détails</a>
                 </div>
             </div>
         </section>
 
         <section id="gestion-evenements" class="admin-evenements">
-            <h2>Gestion des Événements</h2>
+            <h2 data-lang="manageEvents">Gestion des Événements</h2>
             <div class="evenement-list">
                 <div class="evenement-item">
-                    <h3>Yoga Session</h3>
-                    <p><strong>Date :</strong> 01/02/2025</p>
-                    <p><strong>Lieu :</strong> Paris</p>
-                    <a href="#" class="evenement-link">Détails</a>
+                    <h3 data-lang="event1">Yoga Session</h3>
+                    <p><strong data-lang="date">Date :</strong> 01/02/2025</p>
+                    <p><strong data-lang="location">Lieu :</strong> <span data-lang="paris">Paris</span></p>
+                    <a href="#" class="evenement-link" data-lang="details">Détails</a>
                 </div>
                 <div class="evenement-item">
-                    <h3>Team Building</h3>
-                    <p><strong>Date :</strong> 01/03/2025</p>
-                    <p><strong>Lieu :</strong> Lyon</p>
-                    <a href="#" class="evenement-link">Détails</a>
+                    <h3 data-lang="event2">Team Building</h3>
+                    <p><strong data-lang="date">Date :</strong> 01/03/2025</p>
+                    <p><strong data-lang="location">Lieu :</strong> <span data-lang="lyon">Lyon</span></p>
+                    <a href="#" class="evenement-link" data-lang="details">Détails</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Business Care. Tous droits réservés.</p>
+        <p data-lang="copyright">&copy; 2025 Business Care. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        const translations = {
+            fr: {
+                home: "Accueil",
+                client: "Client",
+                employee: "Employé",
+                provider: "Fournisseur",
+                admin: "Admin",
+                adminSpaceTitle: "Espace Administrateur",
+                adminSpaceDescription: "Bienvenue dans l'espace de gestion de Business Care. Gérez les sociétés clientes, les salariés, les fournisseurs et les événements.",
+                manageCompanies: "Gestion des Sociétés Client",
+                company1: "TechCorp",
+                company2: "HealthPlus",
+                contact: "Contact :",
+                contract: "Contrat :",
+                premiumActive: "Premium - Actif",
+                basicPending: "Basic - En attente",
+                details: "Détails",
+                manageEmployees: "Gestion des Salariés",
+                employee1: "John Doe",
+                employee2: "Jane Smith",
+                company: "Société :",
+                status: "Statut :",
+                active: "Actif",
+                manageProviders: "Gestion des Fournisseurs",
+                provider1: "YogaMaster",
+                provider2: "CoachX",
+                services: "Services :",
+                yoga: "Yoga",
+                coaching: "Coaching",
+                rate: "Tarif :",
+                manageEvents: "Gestion des Événements",
+                event1: "Yoga Session",
+                event2: "Team Building",
+                date: "Date :",
+                location: "Lieu :",
+                paris: "Paris",
+                lyon: "Lyon",
+                copyright: "&copy; 2025 Business Care. Tous droits réservés.",
+            },
+            en: {
+                home: "Home",
+                client: "Client",
+                employee: "Employee",
+                provider: "Provider",
+                admin: "Admin",
+                adminSpaceTitle: "Admin Space",
+                adminSpaceDescription: "Welcome to the Business Care management space. Manage client companies, employees, providers, and events.",
+                manageCompanies: "Manage Client Companies",
+                company1: "TechCorp",
+                company2: "HealthPlus",
+                contact: "Contact:",
+                contract: "Contract:",
+                premiumActive: "Premium - Active",
+                basicPending: "Basic - Pending",
+                details: "Details",
+                manageEmployees: "Manage Employees",
+                employee1: "John Doe",
+                employee2: "Jane Smith",
+                company: "Company:",
+                status: "Status:",
+                active: "Active",
+                manageProviders: "Manage Providers",
+                provider1: "YogaMaster",
+                provider2: "CoachX",
+                services: "Services:",
+                yoga: "Yoga",
+                coaching: "Coaching",
+                rate: "Rate:",
+                manageEvents: "Manage Events",
+                event1: "Yoga Session",
+                event2: "Team Building",
+                date: "Date:",
+                location: "Location:",
+                paris: "Paris",
+                lyon: "Lyon",
+                copyright: "&copy; 2025 Business Care. All rights reserved.",
+            },
+            ar: {
+                home: "الصفحة الرئيسية",
+                client: "عميل",
+                employee: "موظف",
+                provider: "مزود",
+                admin: "مدير",
+                adminSpaceTitle: "مساحة الإدارة",
+                adminSpaceDescription: "مرحبًا بكم في مساحة إدارة Business Care. قم بإدارة الشركات والعملاء والموظفين والموردين والفعاليات.",
+                manageCompanies: "إدارة الشركات العميلة",
+                company1: "TechCorp",
+                company2: "HealthPlus",
+                contact: "الاتصال:",
+                contract: "العقد:",
+                premiumActive: "بريميوم - نشط",
+                basicPending: "أساسي - قيد الانتظار",
+                details: "تفاصيل",
+                manageEmployees: "إدارة الموظفين",
+                employee1: "جون دو",
+                employee2: "جين سميث",
+                company: "الشركة:",
+                status: "الحالة:",
+                active: "نشط",
+                manageProviders: "إدارة الموردين",
+                provider1: "YogaMaster",
+                provider2: "CoachX",
+                services: "الخدمات:",
+                yoga: "يوغا",
+                coaching: "تدريب",
+                rate: "السعر:",
+                manageEvents: "إدارة الفعاليات",
+                event1: "جلسة يوغا",
+                event2: "بناء الفريق",
+                date: "التاريخ:",
+                location: "الموقع:",
+                paris: "باريس",
+                lyon: "ليون",
+                copyright: "&copy; 2025 Business Care. جميع الحقوق محفوظة.",
+            },
+        };
+
+        function updateLanguage(lang) {
+            const elements = document.querySelectorAll("[data-lang]");
+            elements.forEach((element) => {
+                const key = element.getAttribute("data-lang");
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            if (lang === "ar") {
+                document.body.setAttribute("dir", "rtl");
+            } else {
+                document.body.setAttribute("dir", "ltr");
+            }
+        }
+
+        document.getElementById("language").addEventListener("change", (event) => {
+            const selectedLang = event.target.value;
+            updateLanguage(selectedLang);
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const defaultLang = "fr"; 
+            updateLanguage(defaultLang);
+        });
+    </script>
 </body>
 </html>
